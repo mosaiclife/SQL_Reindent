@@ -38,10 +38,16 @@ class Stack():
             return 0
 
 
+class Tree():
+    
+    def __init__(self):
+        self.stack = Stack()
+        
+        self.lchild = ''
+        self.data = ''
+        self.rchild = ''
+
+
+
 if __name__ == '__main__':
-    test = Stack()
-    test.push("1")
-    test.push("2")
-    print test.pop()
-    print test.pop()
-    print test.pop()
+    tree = Tree()
