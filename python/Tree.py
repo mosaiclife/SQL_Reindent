@@ -82,7 +82,7 @@ class Tree():
         postorderTraverse(Tree.getRightSubTree())
         print Tree.getData()
 
-
+    __insert = insert
 
 
 if __name__ == '__main__':

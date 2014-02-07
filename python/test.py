@@ -126,6 +126,7 @@ class Tree():
 if __name__ == '__main__':
     
     
+    
     root = Tree(8)
     root.insert(3)
     root.insert(10)
