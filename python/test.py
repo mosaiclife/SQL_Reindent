@@ -2,6 +2,7 @@
 
 import sys
 
+# 스택
 class Stack():
     
     def __init__(self):
@@ -38,16 +39,60 @@ class Stack():
             return 0
 
 
+# 이진 트리
 class Tree():
     
-    def __init__(self):
-        self.stack = Stack()
+    def __init__(self, data, lchild = None, rchild = None):
+        #self.stack = Stack()
         
-        self.lchild = ''
-        self.data = ''
-        self.rchild = ''
+        self.data = data
+        self.lchild = lchild
+        self.rchild = rchild
 
+    def getData(self):
+        return self.data
+    
+    def getLeftSubTree(self):
+        return self.lchild
+    
+    def getRightSubTree(self):
+        return self.rchild
+    
+    def printTree(self):
+        print self.lchild.data + ', ' + self.data + ', ' #+ self.rchild.data
+
+        
+# 전위순회
+def preorderTraverse(Tree):
+    if Tree == None:
+        return
+    
+    print Tree.getData()
+    preorderTraverse(Tree.getLeftSubTree())
+    preorderTraverse(Tree.getRightSubTree())
+
+    
+# 중위순회
+def inorderTraverse(Tree):
+    if Tree == None:
+        return
+    
+    inorderTraverse(Tree.getLeftSubTree())
+    print Tree.getData()
+    inorderTraverse(Tree.getRightSubTree())
+
+    
+# 후위순회
+def postorderTraverse(Tree):
+    if Tree == None:
+        return
+
+    postorderTraverse(Tree.getLeftSubTree())
+    postorderTraverse(Tree.getRightSubTree())
+    print Tree.getData()
 
 
 if __name__ == '__main__':
-    tree = Tree()
+    
+    # root = Tree('SELECT', Tree('a', Tree(',b')), Tree('FROM', Tree('T1')))
+    # preorderTraverse(root)
